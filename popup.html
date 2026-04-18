@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Audit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🔒 Privacy Audit</h1>
+        <button id="scan-btn">Analyze Website</button>
+    </header>
+    <main class="container">
+        <div id="loading" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p class="loading-text">Analyzing website privacy and security...</p>
+        </div>
+        <div id="results" class="results">
+            <section class="score-section">
+                <div id="score-display" class="score-box">--</div>
+                <div id="safety-recommendation" class="recommendation"></div>
+            </section>
+            <div class="grid">
+                <section class="card">
+                    <div class="card-header"><h2>Permissions</h2></div>
+                    <div class="card-content">
+                        <div class="permissions-list">
+                            <div class="permission-item">
+                                <span>Camera</span>
+                                <span id="camera-access" class="permission-status">Not Checked</span>
+                            </div>
+                            <div class="permission-item">
+                                <span>Microphone</span>
+                                <span id="mic-access" class="permission-status">Not Checked</span>
+                            </div>
+                            <div class="permission-item">
+                                <span>Notifications</span>
+                                <span id="notifications-access" class="permission-status">Not Checked</span>
+                            </div>
+                            <div class="permission-item">
+                                <span>Location</span>
+                                <span id="geolocation-access" class="permission-status">Not Checked</span>
+                            </div>
+                            <div class="permission-item">
+                                <span>Clipboard</span>
+                                <span id="clipboard-access" class="permission-status">Not Checked</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="card-header"><h2>Compliance</h2></div>
+                    <div class="card-content">
+                        <div id="gdpr-card" class="compliance-card"></div>
+                        <div id="dpdp-card" class="compliance-card"></div>
+                    </div>
+                </section>
+            </div>
+            <section class="card findings-section">
+                <div class="card-header"><h2>Key Findings</h2></div>
+                <div class="card-content">
+                    <ul id="key-findings" class="findings-list"></ul>
+                </div>
+            </section>
+            <section class="card tips-section">
+                <div class="card-header"><h2>Security Tips</h2></div>
+                <div class="card-content">
+                    <ul id="tips" class="tips-list"></ul>
+                </div>
+            </section>
+        </div>
+        <div id="error-notification" class="error-notification"></div>
+    </main>
+    <script src="popup.js"></script>
+</body>
+</html>
